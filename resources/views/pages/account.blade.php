@@ -1,68 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Account Page</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <title>IPT Midterm Project</title>
 </head>
-<style>
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  width: 200px;
-  background-color: #f1f1f1;
-}
-li a {
-  display: block;
-  color: #000;
-  padding: 8px 16px;
-  text-decoration: none;
-}
-
-/* Change the link color on hover */
-li a:hover {
-  background-color: #555;
-  color: white;
-}
-</style>
 <body>
-
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">IPT Midterm Project</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-info">
+        <div class="container">
+            <a class="navbar-brand" href="<?= url('/') ?>">IPT Midterm Project</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ml-auto">
+                    <a class="nav-item nav-link active" href="<?= url('/') ?>">Home</a>
+                    <a class="nav-item nav-link" href="<?= url('/user') ?>">Users</a>
+                    <a class="nav-item nav-link" href="<?= url('/account') ?>">Account</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 offset-md-4">
+                <div class="card text-center bg-primary style="margin-top: 10%;>
+                    <div class="card-header text-white">
+                        <h4>Main Menu</h4>
+                    </div>
+                    <div class="card-body">
+                        <table>
+                            <tr><a href="<?= url('/') ?>" class="btn btn-block bg-dark">Home</a></tr>
+                            <tr><a href="<?= url('/user') ?>" class="btn btn-block bg-dark">Users</a></tr>
+                            <tr><a href="<?= url('/account') ?>" class="btn btn-block bg-dark">Account</a></tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <ul class="container nav navbar-nav pull-right" style="width: 300px;">
-      <li><a href="{{url('/')}}">Home</a></li>
-      <li><a href="{{url('/user')}}">Users</a></li>
-      <li> Account </li>
-    </ul>
-  </div>
-</nav>
-  
-<div class="container">
-    <h3>Account</h3>
-    <table class="table table-stripped">
-        <tr>
-            <td>Account #</td>
-            <td>Account Name</td>
-            <td>Initial Investment</td>
-            <td>Date Started</td>
-        </tr>
-        @foreach ($account as $a)
-        <tr>
-        <td>{{$a->id}}</td>
-            <td>{{$a->acct_name}}</td>
-            <td>{{$a->init_invest}}</td>
-            <td>{{$a->created_at}}</td>
-        </tr>
-        @endforeach
-        </table>
-</div>
-
 </body>
 </html>
