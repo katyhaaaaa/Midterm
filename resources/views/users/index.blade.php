@@ -37,7 +37,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach($users as $user): ?>
+                        <?php foreach($user as $user): ?>
                             <tr>
                                 <td><?= $user->id ?></td>
                                 <td><?= $user->lname ?></td>

@@ -13,12 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'SiteController@index', function () {
-    return view('home');
-});
-Route::get('/user', 'UserController@index', function () {
-    return view('user');
-});
-Route::get('/account', 'AccountController@index', function () {
-    return view('account');
-});
+Route::get('/', 'SiteController@index');
+Route::get('/user', 'UserController@index');
+Route::get('/account', 'AccountController@index');

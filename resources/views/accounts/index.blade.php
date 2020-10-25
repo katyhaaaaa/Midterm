@@ -8,7 +8,7 @@
     <title>IPT Midterm Project</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-info">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary
         <div class="container">
             <a class="navbar-brand" href="<?= url('/') ?>">IPT Midterm Project</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -16,28 +16,37 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ml-auto">
-                    <a class="nav-item nav-link active" href="<?= url('/') ?>">Home</a>
+                    <a class="nav-item nav-link" href="<?= url('/') ?>">Home</a>
                     <a class="nav-item nav-link" href="<?= url('/user') ?>">Users</a>
-                    <a class="nav-item nav-link" href="<?= url('/account') ?>">Account</a>
+                    <a class="nav-item nav-link active" href="<?= url('/account') ?>">Accounts</a>
                 </div>
             </div>
         </div>
     </nav>
     <div class="container">
         <div class="row">
-            <div class="col-md-4 offset-md-4">
-                <div class="card text-center bg-primary style="margin-top: 10%;>
-                    <div class="card-header text-white">
-                        <h4>Main Menu</h4>
-                    </div>
-                    <div class="card-body">
-                        <table>
-                            <tr><a href="<?= url('/') ?>" class="btn btn-block bg-dark">Home</a></tr>
-                            <tr><a href="<?= url('/user') ?>" class="btn btn-block bg-dark">Users</a></tr>
-                            <tr><a href="<?= url('/account') ?>" class="btn btn-block bg-dark">Account</a></tr>
-                        </table>
-                    </div>
-                </div>
+            <div class="col">
+                <h3>Accounts</h3>
+                <table class="table table-bordered table-stripped bg-primary
+                    <thead>
+                        <tr class="bg-success">
+                            <th>Account #</th>
+                            <th>Account Name</th>
+                            <th>Initial Investment</th>
+                            <th>Data Started</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach($account as $acct): ?>
+                            <tr>
+                                <td><?= $acct->id ?></td>
+                                <td><?= $acct->acct_name ?></td>
+                                <td><?= $acct->init_invest ?></td>
+                                <td><?= $acct->start_date ?></td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>

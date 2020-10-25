@@ -17,7 +17,7 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ml-auto">
                     <a class="nav-item nav-link active" href="<?= url('/') ?>">Home</a>
-                    <a class="nav-item nav-link" href="<?= url('/user') ?>">User</a>
+                    <a class="nav-item nav-link" href="<?= url('/user') ?>">Users</a>
                     <a class="nav-item nav-link" href="<?= url('/account') ?>">Account</a>
                 </div>
             </div>
@@ -26,7 +26,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4 offset-md-4">
-                <div class="card text-center bg-primary style="margin-top: 10%;>
+                <div class="card text-center bg-primary style="margin-top: 10%;">
                     <div class="card-header text-white">
                         <h4>Main Menu</h4>
                     </div>

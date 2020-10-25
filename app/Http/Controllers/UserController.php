@@ -3,13 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use DB;
-use Illuminate\Support\Facades\DB as FacadesDB;
+use App\User;
 
 class UserController extends Controller
 {
     public function index(){
-        $user = FacadesDB::select('select * from user');
-        return view('user',['user'=>$user]);
+        $user = User::orderBy('lname')->get();
+        return view('users.index', ['user' => $user]); 
     }
 }

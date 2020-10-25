@@ -13,7 +13,7 @@ class CreateAccountTable extends Migration
      */
     public function up()
     {
-        Schema::create('accounts', function (Blueprint $table) {
+        Schema::create('account', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
             $table->string('acct_name',90);

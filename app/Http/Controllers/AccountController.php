@@ -3,13 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use DB;
-use Illuminate\Support\Facades\DB as FacadesDB;
+use App\Account;
 
 class AccountController extends Controller
 {
     public function index(){
-        $account = FacadesDB::select('select * from account');
-        return view('account',['account'=>$account]);
+        $accs = Account::orderBy('acct_name')->get();
+        return view('accounts.index',['account'=>$accs]);
     }
 }
